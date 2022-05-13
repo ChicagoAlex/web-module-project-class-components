@@ -1,5 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from 'react'
+import TodoList from './TodoList'
+import TodoForm from './Form'
 
 export default class App extends React.Component {
   constructor() {
@@ -26,18 +28,9 @@ export default class App extends React.Component {
       <div>
         <h1>My todo list</h1>
 
-        <ul>
-          {
-            todos.map(todo=> {
-              return (<li>{todo.name} { todo.completed?<span>- completed</span> : <span></span> }</li>)
-            })
-          }       
-        </ul>
+        <TodoList todos={todos}/>
 
-        <form>
-          <input />
-          <button>Add todo</button>
-        </form>
+        <TodoForm />
 
         <button>Clear completed</button>
       </div>
